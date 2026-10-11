@@ -30,11 +30,29 @@
 
 ## 3. States yang wajib ada (sering dilupakan)
 
-Setiap layar/data wajib punya desain untuk:
+Setiap layar/data wajib punya desain untuk keempat state ini. Anggap masing-masing
+sebagai "halaman" tersendiri seperti halaman 404 — bukan sekadar pesan tempel:
+
 - **Loading** — skeleton, bukan layar kosong.
 - **Empty** — ilustrasi/teks jelas + aksi ("Belum ada data — tambah pertama").
-- **Error** — pesan manusiawi + aksi pemulihan ("Coba lagi"), bukan stack trace.
-- **Offline/lambat** — beri tahu user, jangan diam.
+- **Error** — halaman error yang manusiawi:
+  - Katakan apa yang terjadi dengan bahasa manusia ("Ada yang salah di sisi kami"),
+    bukan kode ("Error 500").
+  - Satu aksi pemulihan yang jelas ("Coba lagi" / "Kembali ke beranda").
+  - Bedakan jenisnya: 404 (halaman tidak ada → tawarkan navigasi/pencarian),
+    500/kesalahan server (minta maaf → coba lagi), error boundary (satu komponen
+    rusak — jangan jatuhkan seluruh halaman).
+  - Sertakan ID error untuk lapor ke support. User tidak bisa melapor dengan
+    kalimat "tadi error".
+- **Offline** — state offline ala YouTube ("Anda sedang offline"):
+  - Tampilkan jelas saat koneksi mati — jangan biarkan user menatap spinner abadi
+    atau layar kosong.
+  - Nonaktifkan aksi yang butuh network, dengan penjelasan ("Perlu koneksi untuk
+    menyimpan") — jangan biarkan tombol yang diklik lalu gagal diam-diam.
+  - Sediakan "Coba lagi" dan/atau muat ulang otomatis saat koneksi kembali.
+  - YAGNI: ini state UX, bukan arsitektur offline-first. Service worker / sync
+    queue hanya bila aplikasi memang harus bisa dipakai tanpa koneksi — jangan
+    diresepkan ke semua aplikasi.
 
 ## 4. Mobile-first & aksesibilitas dasar
 
