@@ -7,6 +7,9 @@ All notable changes to this skill are documented here. Format follows [Keep a Ch
 ### Added
 - `references/ux.md` §3 "States yang wajib ada": anatomi konkret halaman error (bahasa manusiawi, aksi pemulihan, bedakan 404/500/error boundary, ID error untuk support) dan state offline ala YouTube ("Anda sedang offline": tampil jelas, nonaktifkan aksi network + penjelasan, coba lagi/muat ulang otomatis). Tetap YAGNI — state UX, bukan arsitektur offline-first.
 
+### Fixed
+- `references/ux.md` §3: paradoks offline state — panduan kini dibedakan untuk aplikasi online-first (offline = degraded, nonaktifkan aksi network) vs offline-first (offline = mode operasi normal; tampilkan status sync, bukan larangan pakai).
+
 ## [1.0.0] - 2026-10-10
 
 ### Added

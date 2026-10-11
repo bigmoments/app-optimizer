@@ -44,15 +44,17 @@ sebagai "halaman" tersendiri seperti halaman 404 — bukan sekadar pesan tempel:
     rusak — jangan jatuhkan seluruh halaman).
   - Sertakan ID error untuk lapor ke support. User tidak bisa melapor dengan
     kalimat "tadi error".
-- **Offline** — state offline ala YouTube ("Anda sedang offline"):
-  - Tampilkan jelas saat koneksi mati — jangan biarkan user menatap spinner abadi
-    atau layar kosong.
-  - Nonaktifkan aksi yang butuh network, dengan penjelasan ("Perlu koneksi untuk
-    menyimpan") — jangan biarkan tombol yang diklik lalu gagal diam-diam.
-  - Sediakan "Coba lagi" dan/atau muat ulang otomatis saat koneksi kembali.
-  - YAGNI: ini state UX, bukan arsitektur offline-first. Service worker / sync
-    queue hanya bila aplikasi memang harus bisa dipakai tanpa koneksi — jangan
-    diresepkan ke semua aplikasi.
+- **Offline** — bedakan dua kasus, jangan disamaratakan:
+  - *Aplikasi online-first* (butuh koneksi): state offline ala YouTube ("Anda sedang
+    offline") — tampilkan jelas saat koneksi mati, nonaktifkan aksi yang butuh network
+    dengan penjelasan ("Perlu koneksi untuk menyimpan"), sediakan "Coba lagi" dan/atau
+    muat ulang otomatis saat koneksi kembali. Jangan biarkan user menatap spinner abadi.
+  - *Aplikasi offline-first*: offline adalah mode operasi **normal**, bukan error.
+    Aplikasi tetap jalan penuh; yang ditampilkan adalah **status sync** — "tersimpan
+    lokal, menunggu sync" vs "sudah di cloud" — bukan larangan memakai aplikasi.
+    Jangan nonaktifkan fitur yang bisa jalan lokal.
+  - YAGNI: arsitektur offline-first (service worker/sync queue) hanya bila aplikasi
+    memang harus bisa dipakai tanpa koneksi — jangan diresepkan ke semua aplikasi.
 
 ## 4. Mobile-first & aksesibilitas dasar
 
