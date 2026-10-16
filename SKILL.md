@@ -4,9 +4,12 @@ description: >
   Optimasi aplikasi agar ringan, cepat, aman, dan nyaman dipakai — ramah free tier.
   Gunakan saat merencanakan aplikasi baru, mengaudit performa aplikasi yang sudah
   berjalan, sebelum deploy/rilis, saat menambah API endpoint, atau saat ada keluhan
-  aplikasi "lemot", "berat", atau boros resource. Trigger chat: "optimasi aplikasi",
-  "audit performa", "bikin lebih ringan", "aplikasi lemot", "cek kecepatan",
-  "app-optimizer", "optimize my app", "performance audit", "make it faster".
+  aplikasi "lemot", "berat", atau boros resource. Juga untuk aplikasi desktop
+  (WPF/C#/C++/Python), Android (Kotlin/Java), dan Flutter.
+  Trigger chat: "optimasi aplikasi", "audit performa", "bikin lebih ringan",
+  "aplikasi lemot", "cek kecepatan", "app-optimizer", "optimize my app",
+  "performance audit", "make it faster", "optimasi aplikasi desktop",
+  "aplikasi android lemot", "optimasi flutter".
 license: MIT
 version: 1.0.0
 ---
@@ -23,6 +26,9 @@ Skill ini dipakai dua arah:
 2. **Otomatis oleh agent** — saat kondisi berikut terpenuhi:
    - Merencanakan/membangun aplikasi baru → **Jalur A**
    - Mengaudit atau memperbaiki aplikasi yang sudah berjalan → **Jalur B**
+   - Target BUKAN web (desktop WPF/C#/C++/Python, Android Kotlin/Java, Flutter)
+     → baca `references/platforms.md` dulu untuk metrik & pola platform, lalu
+     modul umum di bawah (prinsipnya portable, metriknya beda)
    - Sebelum deploy/rilis → jalankan checklist pre-rilis di `references/checklists.md`
    - Menambah endpoint API baru → terapkan `references/rate-limiting.md` + `references/security.md`
    - Keluhan performa ("lemot", "timeout", "boros") → ukur baseline → `references/debugging.md`
@@ -49,6 +55,8 @@ Prinsip: *ukur, jangan tebak; perbaiki, jangan rewrite.* Jangan ubah arsitektur 
 Saat waktu atau tenaga terbatas, kerjakan berurutan — berhenti saat target tercapai:
 
 1. **Ukur baseline** — Web Vitals (LCP, INP, CLS), waktu respons API p95, query DB lambat, ukuran bundle JS.
+   Untuk aplikasi desktop/mobile/Flutter, ganti metrik web dengan metrik platform
+   (`references/platforms.md`): cold start, ANR/crash-free, ukuran binary/APK, jank.
 2. **Database** — index yang hilang + N+1. Biang kerok nomor satu aplikasi data-driven.
 3. **Caching** — untuk data yang dihitung berulang dan jarang berubah.
 4. **Frontend** — gambar (WebP, responsif) + ukuran bundle JS.
@@ -62,6 +70,7 @@ Saat waktu atau tenaga terbatas, kerjakan berurutan — berhenti saat target ter
 | Modul | Kapan dibaca |
 |---|---|
 | `references/performance.md` | Selalu — fondasi: budget, backend & frontend ringan |
+| `references/platforms.md` | Target bukan web — metrik & pola desktop (WPF/C#/C++/Python), Android (Kotlin/Java), Flutter |
 | `references/database.md` | Ada database — indexing, EXPLAIN, N+1, pooling, migrasi |
 | `references/caching.md` | Data dihitung berulang / dibaca jauh lebih sering daripada ditulis |
 | `references/rate-limiting.md` | Ada API publik atau endpoint yang bisa di-abuse |

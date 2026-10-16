@@ -5,6 +5,7 @@ All notable changes to this skill are documented here. Format follows [Keep a Ch
 ## [Unreleased]
 
 ### Added
+- `references/platforms.md` baru: optimasi aplikasi non-web — Desktop (WPF/C#/C++/Python), Android (Kotlin/Java), Flutter. Berisi deteksi platform dari sinyal repo, metrik tiap platform (cold start, ANR/crash-free, ukuran binary/APK, jank), 80/20 quick wins, pola lintas-platform (crash reporting, secret storage, auto-update), dan cara verifikasi. Modul umum tetap portable; trigger + 80/20 + indeks modul di SKILL.md, budget di `performance.md`, checklist A1/B1, dan satu poin desktop di `ux.md` §4 kini mengarah ke modul ini bila target bukan web.
 - `references/ux.md` §3 "States yang wajib ada": anatomi konkret halaman error (bahasa manusiawi, aksi pemulihan, bedakan 404/500/error boundary, ID error untuk support) dan state offline ala YouTube ("Anda sedang offline": tampil jelas, nonaktifkan aksi network + penjelasan, coba lagi/muat ulang otomatis). Tetap YAGNI — state UX, bukan arsitektur offline-first.
 
 ### Fixed

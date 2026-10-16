@@ -63,6 +63,8 @@ sebagai "halaman" tersendiri seperti halaman 404 — bukan sekadar pesan tempel:
 3. Semua aksi bisa diakses keyboard; fokus terlihat jelas.
 4. Jangan andalkan warna saja untuk informasi (tambah ikon/teks).
 5. Hormati `prefers-reduced-motion` — matikan animasi berat bila diminta.
+6. Aplikasi desktop: dukung resize window yang wajar, keyboard shortcut untuk aksi
+   utama, dan DPI scaling (jangan pecah di layar HiDPI).
 
 ## Saat merencanakan (Jalur A)
 

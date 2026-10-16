@@ -20,6 +20,9 @@ atau ukur sebagai baseline (Jalur B):
 menjebol budget tanpa diskusi eksplisit.
 **Saat mengoptimasi:** ukur dulu dengan Lighthouse / WebPageTest / APM sederhana.
 Catat angkanya — ini pembanding semua perbaikan.
+**Bukan web:** tabel di atas untuk web. Untuk desktop/mobile/Flutter, pakai metrik
+platform di `references/platforms.md` (cold start, ANR/crash-free, ukuran binary,
+jank) — prinsip "tetapkan budget dulu" tetap sama.
 
 ## 2. Backend ringan
 

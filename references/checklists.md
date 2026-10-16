@@ -9,7 +9,9 @@ Jalankan sekali di awal, dan ulangi tiap milestone besar.
 
 ### A1. Budget & fondasi (`performance.md`)
 - [ ] Budget ditetapkan: LCP, INP, CLS, p95 API, bundle JS, ukuran halaman.
+      Untuk desktop/mobile/Flutter: pakai metrik platform (`references/platforms.md`).
 - [ ] Pola async diputuskan: apa yang jalan di background vs di request.
+      Untuk native: apa yang boleh di main/UI thread vs wajib background.
 - [ ] Timeout didefinisikan untuk semua panggilan keluar.
 
 ### A2. Database (`database.md`)
@@ -40,6 +42,8 @@ Hasil: dokumen desain + budget tercatat. Lanjut bangun.
 
 ### B1. Ukur baseline (wajib pertama)
 - [ ] Web Vitals: LCP, INP, CLS (Lighthouse, 3x run, catat median).
+      Untuk desktop/mobile/Flutter: metrik platform (`references/platforms.md`) —
+      cold start, ANR/crash-free, ukuran binary/APK, jank.
 - [ ] Respons API p95 per endpoint penting.
 - [ ] Query DB lambat: slow query log / pg_stat_statements, urut by total time.
 - [ ] Bundle JS + ukuran halaman awal.

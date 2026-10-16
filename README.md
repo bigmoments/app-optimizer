@@ -54,6 +54,7 @@ When time is limited, work top-down and stop when the target is hit:
 | Module | When the agent reads it |
 |---|---|
 | `references/performance.md` | Always — budgets, lean backend & frontend |
+| `references/platforms.md` | Non-web target — metrics & patterns for desktop (WPF/C#/C++/Python), Android (Kotlin/Java), Flutter |
 | `references/database.md` | Has a database — indexing, EXPLAIN, N+1, pooling, migrations |
 | `references/caching.md` | Data computed repeatedly / read far more than written |
 | `references/rate-limiting.md` | Public API or abusable endpoints |
@@ -107,7 +108,7 @@ app-optimizer/
 ├── README.md                 # This file
 ├── LICENSE                   # MIT
 ├── CHANGELOG.md
-├── references/               # The nine knowledge modules
+├── references/               # The ten knowledge modules
 │   ├── performance.md
 │   ├── database.md
 │   ├── caching.md
