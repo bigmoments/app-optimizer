@@ -10,6 +10,7 @@ Jalankan sekali di awal, dan ulangi tiap milestone besar.
 ### A1. Budget & fondasi (`performance.md`)
 - [ ] Budget ditetapkan: LCP, INP, CLS, p95 API, bundle JS, ukuran halaman.
       Untuk desktop/mobile/Flutter: pakai metrik platform (`references/platforms.md`).
+      Bila tidak ditemukan di dokumen: tanyakan ke user (lihat "Bertanya interaktif di chat").
 - [ ] Pola async diputuskan: apa yang jalan di background vs di request.
       Untuk native: apa yang boleh di main/UI thread vs wajib background.
 - [ ] Timeout didefinisikan untuk semua panggilan keluar.

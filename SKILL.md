@@ -42,6 +42,29 @@ Prinsip: *jangan bangun utang performa.*
 **Jalur B — Optimasi existing (brownfield):** aplikasi sudah jalan. Audit dulu, ukur baseline, perbaiki bertahap tanpa merusak yang berjalan.
 Prinsip: *ukur, jangan tebak; perbaiki, jangan rewrite.* Jangan ubah arsitektur kecuali data membuktikan perlu.
 
+## Bertanya interaktif di chat
+
+Skill ini dipakai lewat percakapan, manfaatkan itu. Jangan menebak informasi yang
+bisa ditanyakan; tapi jangan juga menanyai yang bisa diukur sendiri.
+
+**Tanyakan bila:**
+- Platform/target ambigu (tidak terdeteksi dari repo) → tanya via `muse.create_options`.
+- Budget tidak tertulis di mana pun dan tidak bisa disimpulkan → tanya angka target.
+- Pola bisnis memengaruhi keputusan teknis → mis. "konten berubah tiap menit atau
+  tiap hari?" (menentukan strategi revalidasi), "butuh realtime atau boleh stale?".
+- Ada dua arah fix yang valid dan tradeoff-nya milik user (biaya vs kecepatan).
+
+**Jangan tanyakan, ukur/baca sendiri dulu:**
+- Yang bisa dibaca dari kode (platform, framework, pola caching existing).
+- Yang bisa diukur (Web Vitals, bundle, slow query, angka dashboard).
+- Yang punya jawaban benar secara teknis (jangan lempar keputusan teknis ke user).
+
+**Cara bertanya:**
+- Pilihan terbatas → `muse.create_options` (2-3 opsi, jawaban singkat yang natural).
+- Terbuka → teks biasa, satu pertanyaan yang jelas.
+- Batch sekaligus dalam satu pesan, jangan cicil satu per satu.
+- Setiap jawaban dicatat di laporan audit agar tidak ditanya dua kali.
+
 ## Prinsip inti
 
 1. **Ukur dulu.** Tanpa angka baseline, optimasi adalah tebak-tebakan.
@@ -71,6 +94,7 @@ Saat waktu atau tenaga terbatas, kerjakan berurutan — berhenti saat target ter
 |---|---|
 | `references/performance.md` | Selalu — fondasi: budget, backend & frontend ringan |
 | `references/platforms.md` | Target bukan web — metrik & pola desktop (WPF/C#/C++/Python), Android (Kotlin/Java), Flutter |
+| `references/serverless.md` | Jalan di serverless/edge (Vercel dkk.): ISR, Fluid CPU, function diet, alert kuota |
 | `references/database.md` | Ada database — indexing, EXPLAIN, N+1, pooling, migrasi |
 | `references/caching.md` | Data dihitung berulang / dibaca jauh lebih sering daripada ditulis |
 | `references/rate-limiting.md` | Ada API publik atau endpoint yang bisa di-abuse |
